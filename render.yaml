@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: student-project-tracker
+    runtime: node
+    rootDir: student_kit/checkpoints/06-full-stack
+    buildCommand: npm ci
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 22.23.3
+      - key: DB_FILE
+        value: /var/data/projects.db
+    disk:
+      name: project-data
+      mountPath: /var/data
+      sizeGB: 1
