@@ -2,7 +2,7 @@ import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
-const publicDir = join(dirname(fileURLToPath(import.meta.url)), 'public');
+const publicDir = dirname(fileURLToPath(import.meta.url));
 const STATUSES = ['Planned', 'In Progress', 'Completed'];
 
 export function createApp(db) {

@@ -5,10 +5,10 @@ import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawn } from 'node:child_process';
-import { createApp } from '../app.js';
-import { createDatabase } from '../database.js';
+import { createApp } from './app.js';
+import { createDatabase } from './database (1).js';
 
-const root = join(dirname(fileURLToPath(import.meta.url)), '..');
+const root = dirname(fileURLToPath(import.meta.url));
 const directory = mkdtempSync(join(tmpdir(), 'tracker-test-'));
 const send = (method, body) => ({ method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
 
